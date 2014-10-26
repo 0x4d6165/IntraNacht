@@ -1,5 +1,3 @@
-require "IntraNacht/version"
-module IntraNacht
 #initialize character
 gender = 3
 weapon = 0
@@ -247,4 +245,3 @@ ending(money, health, win)
 else
 puts "FATAL ERROR"
 end 
-end
