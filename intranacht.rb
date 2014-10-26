@@ -1,0 +1,250 @@
+require "IntraNacht/version"
+module IntraNacht
+#initialize character
+gender = 3
+weapon = 0
+start = 0
+health = 10
+money = 1000
+win = false
+msc = "\n"
+
+#define the ending of the game
+def ending(money, health, win)
+thanks = "Thanks for playing!" 
+if money <= 0 && win == false
+    puts "\n>You've lost all of your pecuniam and thus can't feed yourself. You lost with #{health} health points. #{thanks}"
+    abort
+elsif health <= 0 && win == false
+    puts "\n>You've been killed. You passed on with #{money} pecuniam. #{thanks}"
+    abort
+elsif health == 0 && win == true 
+    puts "\n>You win! #{thanks}"
+    abort
+end
+end
+
+until start == 1
+puts ">To begin your adventure, enter begin."
+start = gets.chomp.downcase
+    if start == "begin"
+        start = 1
+        genderct = 0
+        while genderct == 0
+             puts "#{msc}>Please enter your gender (male or female)."
+             boygirl = gets.chomp.downcase
+            if boygirl == "male"
+                 formal = "sir"
+                 relation = "boyfriend"
+                 title = "hero"
+                 prn = "he"
+                 genderct = 1
+             elsif boygirl == "female"
+                 fomal = "madam"
+                 relation = "girlfriend"
+                 title = "heroine"
+                 prn = "she"
+                 genderct = 1
+             else
+                 genderct = 0
+             end 
+        end 
+
+
+    else 
+        start == 0
+    end 
+end 
+
+puts "#{msc}>You are a knight in the land called IntraNacht. Normally a peaceful place to live, an unknown evil lurks the country side. Your mission is to defeat this evil an its forces you encounter along the way. To help you along, you begin with 10 health points and 1000 pecuniam (roughly equivalent to 100 dollars). You will also be given you choice of weapon. Please say sword or axe."
+until weapon != 0
+sword = gets.chomp.downcase
+    if sword == "sword"
+        weapon = 1
+        puts "#{msc}>Nice! You've selected a sword. Hit enter."
+    elsif sword == "axe"
+        weapon = 2
+        puts "#{msc}>You've selected an axe. Meh. Hit enter I guess..."
+    else 
+        weapon = 0
+	puts "#{msc}>Please select a weapon."
+    end 
+end 
+m = gets.chomp
+
+ob1 = 1 + rand(3)
+
+case ob1
+when 1
+puts"#{msc}>A monstrous troll blocks your path, would you like to fight or run?"	
+chtr1 = 0
+    until chtr1 == 1
+		tr1 = gets.chomp.downcase
+    		if tr1 == "fight"
+        		health -= 2
+                chtr1 = 1
+			puts "#{msc}>You defeat the troll but you suffer injuries. Your health is now down to #{health}."
+    		elsif tr1 == "run"
+        		money -= 500
+                chtr1 = 1
+			puts "#{msc}>You escape but the troll steals pecuniam from your back pocket. You now have #{money} pecuniam."
+    		else 
+        		puts "#{msc}>Would you mind making a descision at some point in the foreseeable future."
+    	end 
+	end 
+when 2
+puts"#{msc}>You come across a huge casm and an elderly man guarding the bridge. He asks you what the airspeed velocity of an unlaiden swallow is."	
+om1 = gets.chomp.downcase
+    	if om1 == "what do you mean? african or european swallow?"
+            money += 750
+            puts "#{msc}Old man> What? I don't know that."
+		    puts "#{msc}>The old man is thrown by some mysterious force into the casm. As he flies, his wallet falls to the ground which contains 750 pecuniam! You now have #{money} pecuniam."
+    	else 
+        	health = 0
+            puts "#{msc}Old man>Incorrect!"
+            ending(money, health, win)
+    	end 
+when 3
+money += 200
+health -= 1
+puts "#{msc}>You find a chest under a tree. Upon opening it, you discover 200 pecuniam! You now have #{money} pecuniam. However, you slice you hand whilst opening the chest. Your health is down to #{health}"
+else
+puts "FATAL ERROR"
+end	        
+
+puts ">Hit enter."
+m = gets.chomp
+inptgenderct = 0
+puts "#{msc}>While walking along, you encounter your long term love intrest? What is the gender of your partner?"
+until inptgenderct != 0
+inptgender = gets.chomp.downcase
+    if inptgender == "male"
+       ptpronoun = "He"
+       ptname = "Jack"
+       ptdo = "his"
+       pttitle = "hero"
+       inptgenderct = 1
+    elsif inptgender == "female"
+        ptpronoun = "She"
+        ptname = "Rose"
+        ptdo = "her"
+        pttitle = "heroine"
+        inptgenderct = 1
+    else 
+        puts ">Ahem..."
+    end
+end
+puts msc
+puts "#{msc}#{ptname}>Wow! Funny running into you here! Hey, I've heard that there's a castle around here that's said to hold the greatest treasure in IntraNacht. However, it's garded by an ancient evil that's slept for thousands of years."
+puts "#{msc}>You decide to join them on their quest as you have a hunch that the 'ancient evil' is the enemy you seek. Hit enter."
+m = gets.chomp
+
+puts "#{msc}>You and #{ptname} stumble across an elderly sorceress. She offers to heal you in exchange for 300 pecuniam. Do you accept her offer?"
+offct = 0
+until offct == 1
+offer = gets.chomp.downcase
+    if offer == "yes"
+        offct = 1
+        health +=1
+        money -= 300
+        puts "#{msc}Old sorceress>Thank you kind #{formal}."
+        puts ">Hit enter."
+        m = gets.chomp
+        ending(money, health, win)
+    elsif offer == "no"
+        offct = 1
+        puts "#{msc}Old sorceress>Pfft. Whatever."
+        puts ">Who do you think you are being rude to kindly sorceresses? Just hit enter, jerk!"
+        m = gets.chomp
+    else
+        puts ">Yes or no? Stop mubling!"
+    end
+end
+
+puts "#{msc}>You and #{ptname} reach the castle and encounter a drawbridge. At the drawbridge is a giant with an obvious drinking problem."
+puts ">Between episodes of sluring and drooling all over himself, he threatens to kill both of you if you attempt to get into the castle. Would you like to fight or pay him off?"
+gtct = 0
+until gtct == 1
+payorfight = gets.chomp.downcase
+    if payorfight == "pay"
+        gtct = 1
+        money -= 500
+        puts "#{msc}Guard>Oh, in that case I suppose I'll let you pass."
+        puts ">Hit enter."
+        m = gets.chomp
+        ending(money, health, win)
+    elsif payorfight == "fight"
+        gtct = 1
+        health -= 3
+        puts "#{msc}>Ouch! You beat the guard but barely. You are now at #{health} health points. Hit enter."
+        msc = gets.chomp
+    else
+        puts ">Oh my god, why do you do this to me?! Make a descision!"
+    end
+end
+
+#expand with castle enemies here later
+
+#ending
+ed = 1 + rand(3)
+
+case ed
+when 1
+puts"#{msc}>WHAT?! Upon reaching the top of the tower which supposedly houses the mysterious evil, you and #{ptname} only find a mirror. \e[3mYou\e[0m are the darkness in the land! Hit enter."  
+m = gets.chomp
+puts "#{msc}>You now play as #{ptname}. What do you want to do with your #{relation} (kill or save)?"
+ks = gets.chomp.downcase
+   ksct = 0
+   until ksct == 1
+   if ks == "kill"
+        puts "#{msc}>So, you've decided to kill your #{relation}? Harsh. However, this was a smart move because you've just saved all of IntraNacht! Hit enter."
+        m = gets.chomp
+        health = 0
+        win = 1
+        svct = 1
+        ending(money, health, win)
+    elsif ks == "save"
+        svct = 1
+        health = 0
+        puts "#{msc}>A noble choice, but the incorrect one. Your #{relation}'s eyes turn black and #{prn} murders you. You've also unleahsed a deamon onto the land. Great going. Hit enter."
+        m = gets.chomp
+        ending(money, health, win)
+    else
+        puts ">I would say something reassuring here, but I can't be bothered. Just choose one or the other already."
+    end
+end
+
+when 2
+puts "#{msc}>Upon reaching the top of the tower which supposedly houses the mysterious evil, #{ptname} reveles themselves to be the bringer of darkness! Hit enter."
+m = gets.chomp
+puts "#{msc}>Would you like to kill #{ptname} or try to reason with them."    
+kr = gets.chomp.downcase
+    krct = 0
+   until krct == 1
+   if ks == "kill"
+        puts "#{msc}>Wow. I mean this relationship probably wasn't going to work out anyway but I didn't expect it to end like this. However, by defeating #{ptdo}, you sort of become the #{title} of IntraNacht. Hit enter."
+        m = gets.chomp
+        health = 0
+        win = true
+        krct = 1
+        ending(money, health, win)
+    elsif ks == "reason"
+        krct = 1
+        health = 0
+        win = true
+        puts "#{msc}>Excelent choice! As your partner, #{ptname} agrees to stop terrorizing the country!"
+        ending(money, health, win)
+    else
+        puts ">I would say something reassuring here, but I can't be bothered. Just choose one or the other already."
+    end
+end
+
+when 3
+health = 0
+win = false
+puts "#{msc}>You reach the highest tower in the castle only to find an empty room. #{ptname} remarks in horror that your eyes have turned black. A voice is heard stating that its vessel is now no longer secure. You colapse onto the ground."
+ending(money, health, win)
+else
+puts "FATAL ERROR"
+end 
+end
