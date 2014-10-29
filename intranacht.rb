@@ -211,34 +211,30 @@ gld = gets.chomp.downcase
 end
 
 when 2
-puts "#{msc}>Upon reaching the top of the tower which supposedly houses the mysterious evil, #{ptname} reveles themselves to be the bringer of darkness! Hit enter."
-m = gets.chomp
-puts "#{msc}>Would you like to kill #{ptname} or try to reason with them."
-kr = gets.chomp.downcase
-    krct = 0
-   until krct == 1
-   if ks == "kill"
-        puts "#{msc}>Wow. I mean this relationship probably wasn't going to work out anyway but I didn't expect it to end like this. However, by defeating #{ptdo}, you sort of become the #{title} of IntraNacht. Hit enter."
+puts "#{msc}>You find an old man with along beard who appears to be insane. He says he will give you 100 pecuniam in exchange for some health points. Accept or decline his offer."
+   om = gets.chomp.downcase
+   omct = 0
+   until omct == 1
+   if om == "accept"
+        puts "#{msc}Old man>Thanks for the health, kid."
+        puts "#{msc}>You now have #{money} pecuniam and #{health} health points. Hit enter."
         m = gets.chomp
-        health = 0
-        win = true
-        krct = 1
+        health -= 3
+        money += 100
+        omct = 1
         ending(money, health, win)
-    elsif ks == "reason"
-        krct = 1
-        health = 0
-        win = true
-        puts "#{msc}>Excelent choice! As your partner, #{ptname} agrees to stop terrorizing the country!"
+    elsif om == "decline"
+        omct = 1
+        puts "#{msc}>Rude! This nice man here is obviously mentally impared and you can't even have the heart to give him some heath!?! Hit enter."
         ending(money, health, win)
     else
-        puts ">I would say something reassuring here, but I can't be bothered. Just choose one or the other already."
+        puts "#{msc}>.........................................................."
     end
 end
 
 when 3
-health = 0
-win = false
-puts "#{msc}>You reach the highest tower in the castle only to find an empty room. #{ptname} remarks in horror that your eyes have turned black. A voice is heard stating that its vessel is now no longer secure. You colapse onto the ground."
+money += 10
+puts "#{msc}>You find a chest in the hallway containing a small amount of pecuniam. You now have #{money} pecuniam."
 ending(money, health, win)
 else
 puts "FATAL ERROR"
