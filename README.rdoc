@@ -1,1 +1,4 @@
-IntraNacht is a purely text-based (abstaining from images or ascii drawings) role playing game in the style of dungeons and dragons built as a linux application with a random story arc and a monetary and health system. The gameplay revolves around various enemies and situations appearing and the unnamed narrator giving the player several choices and the player types their selection. The interface will be a callback to DOS computing of old with white text on a black background as the only interface.
+IntraNacht is a purely text-based (abstaining from images or ascii drawings) role playing game in the style of dungeons and dragons
+built as a Linux application with a random story arc and a monetary and health system. The gameplay revolves around various enemies
+and situations appearing and the unnamed narrator giving the player several choices and the player types their selection.
+The interface is a callback to DOS computing of old with white text on a black background as the only interface.
