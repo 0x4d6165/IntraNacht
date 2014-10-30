@@ -211,7 +211,7 @@ gld = gets.chomp.downcase
 end
 
 when 2
-puts "#{msc}>You find an old man with along beard who appears to be insane. He says he will give you 100 pecuniam in exchange for some health points. Accept or decline his offer."
+puts "#{msc}>You find an old man with a long beard who appears to be insane. He says he will give you 100 pecuniam in exchange for some health points. Accept or decline his offer."
    om = gets.chomp.downcase
    omct = 0
    until omct == 1
