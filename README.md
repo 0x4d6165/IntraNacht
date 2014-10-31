@@ -11,8 +11,6 @@ Make sure you have ruby installed, then run:
 gem install intranacht
 ```
 You should be able to run 'intranacht' in the terminal. If not, you'll have to adjust your path (I haven't figured out how to do this either :-P).
-=======
-You should be able to run 'intranacht' in the terminal. If not, you'll have to adjust your path (I haven't figured this out yet either :-P).
 ####.rb
 Extract the zip file and type:
 ```
