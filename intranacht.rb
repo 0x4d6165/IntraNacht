@@ -71,7 +71,6 @@ end
 m = gets.chomp
 
 ob1 = 1 + rand(3)
-
 case ob1
 when 1
 puts"#{msc}>A monstrous troll blocks your path, would you like to fight or run?"
