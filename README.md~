@@ -10,8 +10,14 @@ Make sure you have ruby installed, then run:
 ```
 gem install intranacht
 ```
-You should now be able to run 'intranacht' in the terminal. If not, you'll have to adjust your path (I haven't figured out how to do this either :-P).
-
+<<<<<<< HEAD
+<<<<<<< HEAD
+You should be able to run 'intranacht' in the terminal. If not, you'll have to adjust your path (I haven't figured out how to do this either :-P).
+=======
+You should be able to run 'intranacht' in the terminal. If not, you'll have to adjust your path (I haven't figured this out yet either :-P).
+=======
+You should be able to run 'intranacht' in the terminal. If not, you'll have to adjust your path (I haven't figured out how to do this either :-P).
+>>>>>>> 9da93c3deed152f0d5a3192b7b88981b3267934d
 ####.rb
 Extract the zip file and type:
 ```
