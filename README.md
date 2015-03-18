@@ -4,13 +4,5 @@ and situations appearing and the unnamed narrator giving the player several choi
 The interface is a callback to DOS computing of old with white text on a black background as the only interface. I realise it has a lame story but I wrote it at about 1:00 in the morning.
 
 ###Installation
-For the moment, you'll either have to take the .rb route of running the game as I haven't figured out how to make a proper .deb file for this yet :(. I apologize for this inconvenience.
+Simply enter: ```gem install intranacht``` into your terminal. If you recieve a permissions error, use: ```sudo gem install intranacht```.
 
-Extract the zip file and type:
-```
-cd /path/to/extracted/folder
-```
-Then, assuming you have ruby installed, run:
-```
-ruby intranacht.rb
-```
